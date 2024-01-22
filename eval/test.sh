@@ -1,6 +1,6 @@
 # PATH=/root/miniconda2/envs/pytorch/bin:$PATH
 cd .. && \
-python pseudo_bottom_up/model_test.py \
+python pseudo_content/model_test.py \
 --margin 0.5 \
 --caption_model topdown \
 --id eval_pch \
