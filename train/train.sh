@@ -1,0 +1,32 @@
+PATH=/root/miniconda2/envs/pytorch/bin:$PATH
+cd .. && \
+python final_decoder.py \
+--input_json data/cocotalk.json \
+--input_fc_dir data/cocobu_fc \
+--input_att_dir data/cocobu_att \
+--input_label_h5 data/cocotalk_label.h5 \
+--margin 0.5 \
+--batch_size 10 \
+--save_checkpoint_every 20 \
+--losses_log_every 1 \
+--val_images_use -1 \
+--max_epochs 100 \
+--rnn_size 512 \
+--language_eval 1 \
+--GPU  3 \
+--gen_lr 5e-5 \
+--dis_lr 5e-5 \
+--lambda_G 1 \
+--lambda_obj 1 \
+--lambda_rec 0 \
+--lambda_tpt  0 \
+--triplet_beta 1.0 \
+--learning_rate_decay_start -1 \
+--learning_rate_decay_rate 0.8 \
+--range_netD 1 \
+--caption_model topdown_triplet_softmax \
+--model_pth best \
+--start_from saving/model.pth \
+--netD_start_from D_G_RL_saving/D_G_RL_1p_only_sample_fixed_G_norepeat_iter0_d-4g-5_batch512.sh/model_240.pth \
+--checkpoint_path saving/pch \
+--id pch
